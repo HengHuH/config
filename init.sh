@@ -4,3 +4,5 @@ export LC_ALL='en_US.UTF-8'
 
 alias tree='tree -N'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+
+export HOMEBREW_NO_AUTO_UPDATE=true
