@@ -1,2 +1,2 @@
-# powershell
-Personal PoserShell Profile
+# Config
+Persional Configs
