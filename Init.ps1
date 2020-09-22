@@ -4,7 +4,6 @@
 
 function prompt {
     $color = Get-Random -Min 1 -Max 16
-    Write-Host ("$env:UserName@$env:COMPUTERNAME " + $(Get-Location) +" $") -NoNewLine `
-     -ForegroundColor $Color
+    Write-Host ("$env:UserName@$env:COMPUTERNAME " + $(Get-Location) +" $") -NoNewLine
     return " "
 }
