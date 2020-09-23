@@ -6,8 +6,19 @@ function prompt {
     # $color = Get-Random -Min 1 -Max 16
     Write-Host ("$env:UserName") -NoNewLine -ForegroundColor Magenta
 	Write-Host ("$") -NoNewLine
-	Write-Host ("$env:COMPUTERNAME ") -NoNewLine -ForegroundColor Yellow
-	Write-Host ($(Get-Location)) -NoNewLine -ForegroundColor Green
+    Write-Host ("$env:COMPUTERNAME ") -NoNewLine -ForegroundColor Yellow
+    $path = (Get-Location).Path
+    $parts = $path.Split("\")
+    $length = $parts.Length
+    if($length -gt 3)
+    {
+        $arr = @()
+        $arr += $parts[0]
+        $arr += "..."
+        $arr += $parts[$length - 1]
+        $path = $arr -join "\"
+    }
+	Write-Host $path -NoNewLine -ForegroundColor Green
 	Write-Host (" $") -NoNewLine
 
     return " "
