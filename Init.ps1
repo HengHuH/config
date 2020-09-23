@@ -14,7 +14,7 @@ function prompt {
     {
         $arr = @()
         $arr += $parts[0]
-        $arr += "..."
+        for($i=1; $i -lt $length - 1; $i++) { $arr += ($parts[$i]).SubString(0,1)}
         $arr += $parts[$length - 1]
         $path = $arr -join "\"
     }
