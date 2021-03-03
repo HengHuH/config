@@ -1,5 +1,5 @@
 # Prompt
-source ~/.local/config/prompt_256.sh
+source ./prompt_256.sh
 
 # config for shell
 export LANG='UTC-8'
