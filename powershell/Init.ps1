@@ -98,10 +98,10 @@ Set-Alias -Name ll -Value Get-ChildItem
 
 # git
 function GitStatus { & git status $args }
-New-Alias -Name gst -Value GitStatus
+New-Alias -Name git-st -Value GitStatus
 
 function GitAllBranch { git branch -a }
-New-Alias -Name gba -Value GitAllBranch
+New-Alias -Name git-ba -Value GitAllBranch
 
 function GitSwitchBranch{
     param (
@@ -109,29 +109,7 @@ function GitSwitchBranch{
     )
     git switch $BranchName
 }
-New-Alias -Name gsb -Value GitSwitchBranch
-
-function GitSwitchNewBranch($BranchName) { git switch -c $BranchName}
-New-Alias -Name gsnb -Value GitSwitchNewBranch
-
-function GitCommitAllMessage ([string]$Message)
-{
-    git add .
-    git commit -m $Message
-}
-New-Alias -Name gcam -Value GitCommitAllMessage
-
-function GitRebaseMaster { git rebase -i master }
-New-Alias -Name grm -Value GitRebaseMaster
-
-function GitPushOriginBranch ($BranchName){ git push origin $BranchName }
-New-Alias -Name gpob -Value GitPushOriginBranch
-
-function GitFetchUpstream { git fetch upstream }
-New-Alias -Name gfu -Value GitFetchUpstream
-
-function GitPush { git push }
-New-Alias -Name gph -Value GitPush
+New-Alias -Name git-sb -Value GitSwitchBranch
 
 # z.lua
 
