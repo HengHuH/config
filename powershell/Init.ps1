@@ -76,7 +76,7 @@ function prompt {
     return " "
 }
 
-iex ($(lua $HOME\.local\config\external\z-lua\z.lua --init powershell) -join "`n") 
+Invoke-Expression ($(lua $HOME\.local\z-lua\z.lua --init powershell) -join "`n") 
 
 #-------------------------------   Set Alias Begin    -------------------------------
 # 1. 编译函数 make
