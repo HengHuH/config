@@ -1,5 +1,6 @@
 # Config
-Persional shell configs for HengHuH，using Powershell on Windows，zsh on Linux or Mac
+
+HengHuH's Persional shell configs，using Powershell on Windows，zsh on Linux or Mac.
 
 ## Dependency
 
