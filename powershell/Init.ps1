@@ -1,13 +1,15 @@
 # Heng's Profile for PowerShell7
 
-#------------------------------- Import Modules BEGIN -------------------------------
+##############
+# Modules
+##############
 
 Import-Module PSReadLine
 
-#------------------------------- Import Modules END   -------------------------------
+##############
+# Hot-Keys
+##############
 
-
-#-------------------------------  Set Hot-keys BEGIN  -------------------------------
 # 设置 Tab 键补全
 # Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
@@ -25,11 +27,11 @@ Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 
 # 设置向下键为前向搜索历史纪录
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
-#-------------------------------  Set Hot-keys END    -------------------------------
 
+################
+# Functions
+################
 
-
-#-------------------------------    Functions BEGIN   -------------------------------
 # Python 直接执行
 # $env:PATHEXT += ";.py"
 
@@ -51,8 +53,9 @@ function Update-Packages {
     tlmgr update --all
 }
 
-#-------------------------------    Functions END     -------------------------------
+####################
 # Prompt
+####################
 
 function prompt {
     # $color = Get-Random -Min 1 -Max 16
@@ -78,7 +81,9 @@ function prompt {
 
 Invoke-Expression ($(lua $HOME\.local\z-lua\z.lua --init powershell) -join "`n") 
 
-#-------------------------------   Set Alias Begin    -------------------------------
+###########
+# Alias
+###########
 # 1. 编译函数 make
 function MakeThings {
     nmake.exe $args -nologo
@@ -97,6 +102,7 @@ Set-Alias -Name ls -Value ListDirectory
 Set-Alias -Name ll -Value Get-ChildItem
 
 # git
+
 function GitStatus { & git status $args }
 New-Alias -Name git-st -Value GitStatus
 
@@ -118,8 +124,8 @@ function ZLuaBackRoot { z -b }
 New-Alias -Name zb -Value ZLuaBackRoot
 
 # 选择最近去的地方
-# function ZLuaLast { z -I -t }
-# New-Alias -Name zh -Value ZLuaLast
+function ZLuaLast { z -I -t }
+New-Alias -Name zh -Value ZLuaLast
 
 # 严格匹配当前路径的子路径
 function ZLuaSubDirectory {& z -c $args}
@@ -132,5 +138,3 @@ New-Alias -Name zi -Value ZLuaInteractive
 # 使用 fzf 对多个结果进行选择
 # function ZLuaRecent { z -I }
 # New-Alias -Name zf -Value ZLuaRecent
-
-#-------------------------------    Set Alias END     -------------------------------
