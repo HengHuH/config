@@ -6,27 +6,14 @@
 
 Import-Module PSReadLine
 
-##############
-# Hot-Keys
-##############
+# keymaps
+. "$PSScriptRoot\keymaps.ps1"
 
-# 设置 Tab 键补全
-# Set-PSReadlineKeyHandler -Key Tab -Function Complete
+# Z.lua
+. "$PSScriptRoot\z.ps1"
 
-# 设置 Ctrl+d 为菜单补全和 Intellisense
-Set-PSReadLineKeyHandler -Key "Tab" -Function MenuComplete
-
-# 设置 Ctrl+d 为退出 PowerShell
-Set-PSReadlineKeyHandler -Key "Ctrl+d" -Function ViExit
-
-# 设置 Ctrl+z 为撤销
-Set-PSReadLineKeyHandler -Key "Ctrl+z" -Function Undo
-
-# 设置向上键为后向搜索历史记录
-Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
-
-# 设置向下键为前向搜索历史纪录
-Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+# git
+. "$PSScriptRoot\git.ps1"
 
 ################
 # Functions
@@ -79,8 +66,6 @@ function prompt {
     return " "
 }
 
-Invoke-Expression ($(lua $HOME\.local\z-lua\z.lua --init powershell) -join "`n") 
-
 ###########
 # Alias
 ###########
@@ -101,40 +86,3 @@ function ListDirectory {
 Set-Alias -Name ls -Value ListDirectory
 Set-Alias -Name ll -Value Get-ChildItem
 
-# git
-
-function GitStatus { & git status $args }
-New-Alias -Name git-st -Value GitStatus
-
-function GitAllBranch { git branch -a }
-New-Alias -Name git-ba -Value GitAllBranch
-
-function GitSwitchBranch{
-    param (
-        $BranchName
-    )
-    git switch $BranchName
-}
-New-Alias -Name git-sb -Value GitSwitchBranch
-
-# z.lua
-
-# 快速回到父目录
-function ZLuaBackRoot { z -b }
-New-Alias -Name zb -Value ZLuaBackRoot
-
-# 选择最近去的地方
-function ZLuaLast { z -I -t }
-New-Alias -Name zh -Value ZLuaLast
-
-# 严格匹配当前路径的子路径
-function ZLuaSubDirectory {& z -c $args}
-New-Alias -Name zz -Value ZLuaSubDirectory
-
-# 使用交互式选择模式
-function ZLuaInteractive {& z -i $args }
-New-Alias -Name zi -Value ZLuaInteractive
-
-# 使用 fzf 对多个结果进行选择
-# function ZLuaRecent { z -I }
-# New-Alias -Name zf -Value ZLuaRecent
