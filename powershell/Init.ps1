@@ -32,12 +32,6 @@ function Update-Packages {
         $tmp = ($a[2 + $i].Split(" "))[0]
         pip install -U $tmp
     }
-
-    # update TeX Live
-    $CurrentYear = Get-Date -Format yyyy
-    Write-Host "Step 2: 更新 TeX Live" $CurrentYear -ForegroundColor Magenta -BackgroundColor Cyan
-    tlmgr update --self
-    tlmgr update --all
 }
 
 ####################
@@ -45,10 +39,13 @@ function Update-Packages {
 ####################
 
 function prompt {
-    # $color = Get-Random -Min 1 -Max 16
+    # User name
     Write-Host ("$env:UserName") -NoNewLine -ForegroundColor Magenta
+    # $
 	Write-Host ("$") -NoNewLine
+    # Computer name
     Write-Host ("$env:COMPUTERNAME ") -NoNewLine -ForegroundColor Yellow
+    # Location, shorten if path is too long.
     $path = (Get-Location).Path
     $parts = $path.Split("\")
     $length = $parts.Length
@@ -69,16 +66,10 @@ function prompt {
 ###########
 # Alias
 ###########
-# 1. 编译函数 make
-function MakeThings {
-    nmake.exe $args -nologo
-}
-Set-Alias -Name make -Value MakeThings
-
-# 2. 更新系统 os-update
+# 更新系统 os-update
 Set-Alias -Name os-update -Value Update-Packages
 
-# 3. 查看目录 ls & ll
+# 查看目录 ls & ll
 function ListDirectory {
     (Get-ChildItem).Name
     Write-Host("")
