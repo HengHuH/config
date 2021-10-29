@@ -1,9 +1,11 @@
 # git
 
+# git add
 function git-ad {
     git add $args
 }
 
+# git commit
 function git-co {
     git commit $args
 }
@@ -13,42 +15,50 @@ function git-co-am {
     git commit -am $args
 }
 
+# git status
 function git-st {
     git status $args
 }
 
+# git branch
 function git-br {
     git branch $args
 }
 
+# git switch
 function git-sw {
     git switch $args
 }
 
+# git push
 function git-ph {
     git push $args
 }
 
+# git pull
 function git-pl {
     git pull $args
 }
 
+# git fetch
 function git-fe {
     git fetch $args
 }
 
-function git-rbi {
+# git rebase
+function git-rb-i {
     git rebase -i $args
 }
 
-function git-rba {
+function git-rb-a {
     git rebase --abort $args
 }
 
-function git-rbc {
+function git-rb-c {
     git rebase --continue $args
 }
 
+# git merge
 function git-mg {
     git merge $args
 }
@@ -57,16 +67,30 @@ function git-rp {
     git remote prune $args
 }
 
+# git rebase
 function git-rs {
     git reset $args
 }
 
-function git-re-s {
+function git-rs-s {
     git reset --soft $args
 }
 
-function git-re-h {
+function git-rs-h {
     git reset --hard $args
+}
+
+# git cherry-pick
+function git-cp {
+    git cherry-pick $args
+}
+
+function git-cp-a {
+    git cherry-pick --abort $args
+}
+
+function git-cp-c {
+    git cherry-pick --continue $args
 }
 
 function Get-Git-IsClean {
