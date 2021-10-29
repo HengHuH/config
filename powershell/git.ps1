@@ -9,6 +9,7 @@ function git-co {
 }
 
 function git-co-am {
+    git add .
     git commit -am $args
 }
 
@@ -56,11 +57,24 @@ function git-rp {
     git remote prune $args
 }
 
+function git-rs {
+    git reset $args
+}
+
+function git-re-s {
+    git reset --soft $args
+}
+
+function git-re-h {
+    git reset --hard $args
+}
+
 function Get-Git-IsClean {
     $gitOutput = (git status --porcelain) | Out-String
     if ($gitOutput) {
         return $false
-    } else {
+    }
+    else {
         return $true
     }
 }
@@ -70,7 +84,8 @@ function Get-Git-CurrentBranch {
 
     if ($LASTEXITCODE -eq 0) {
         return git rev-parse --abbrev-ref HEAD
-    } else {
+    }
+    else {
         return
     }
 }
