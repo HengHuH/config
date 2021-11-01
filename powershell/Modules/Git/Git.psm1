@@ -43,6 +43,14 @@ function gitfe {
     git fetch $args
 }
 
+function gitfeo {
+    git fetch origin $args
+}
+
+function gitfeu {
+    git fetch upsource $args
+}
+
 # git rebase
 function gitrbi {
     git rebase -i $args

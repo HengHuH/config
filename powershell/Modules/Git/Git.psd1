@@ -79,6 +79,8 @@ FunctionsToExport = @(
     'gitps',
     'gitpl',
     'gitfe',
+    'gitfeo',
+    'gitfeu',
     'gitrbi',
     'gitrba',
     'gitrbc',
