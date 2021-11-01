@@ -60,6 +60,10 @@ function gitrbi {
     git rebase -i $args
 }
 
+function gitrbm {
+    git rebase -i master
+}
+
 function gitrba {
     git rebase --abort $args
 }
@@ -71,6 +75,10 @@ function gitrbc {
 # git merge
 function gitmg {
     git merge $args
+}
+
+function gitmgum {
+    git merge upstream/master $args
 }
 
 function gitmga {
