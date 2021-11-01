@@ -153,6 +153,15 @@ function Get-GitIsClean {
     }
 }
 
+# git stash
+function gitss {
+    git stash $args
+}
+
+function gitssp {
+    git stash pop
+}
+
 function Get-GitCurrentBranch {
     git symbolic-ref --quiet HEAD *> $null
 

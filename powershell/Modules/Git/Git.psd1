@@ -102,6 +102,8 @@ FunctionsToExport = @(
     'gitcpc',
     'gitdf',
     'gitlg',
+    'gitss',
+    'gitssp',
     'Get-GitIsClean',
     'Get-GitCurrentBranch'
 )
