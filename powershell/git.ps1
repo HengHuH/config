@@ -31,7 +31,7 @@ function git-sw {
 }
 
 # git push
-function git-ph {
+function git-ps {
     git push $args
 }
 
