@@ -1,103 +1,103 @@
 # git add
-function git_ad {
+function gitad {
     git add $args
 }
 
 # git commit
-function git_co {
+function gitco {
     git commit $args
 }
 
-function git_co_am {
+function gitcoam {
     git add .
     git commit -am $args
 }
 
 # git status
-function git_st {
+function gitst {
     git status $args
 }
 
 # git branch
-function git_br {
+function gitbr {
     git branch $args
 }
 
 # git switch
-function git_sw {
+function gitsw {
     git switch $args
 }
 
 # git push
-function git_ps {
+function gitps {
     git push $args
 }
 
 # git pull
-function git_pl {
+function gitpl {
     git pull $args
 }
 
 # git fetch
-function git_fe {
+function gitfe {
     git fetch $args
 }
 
 # git rebase
-function git_rb_i {
+function gitrbi {
     git rebase -i $args
 }
 
-function git_rb_a {
+function gitrba {
     git rebase --abort $args
 }
 
-function git_rb_c {
+function gitrbc {
     git rebase --continue $args
 }
 
 # git merge
-function git_mg {
+function gitmg {
     git merge $args
 }
 
-function git_rp {
+function gitrp {
     git remote prune $args
 }
 
 # git rebase
-function git_rs {
+function gitrs {
     git reset $args
 }
 
-function git_rs_s {
+function gitrss {
     git reset --soft $args
 }
 
-function git_rs_h {
+function gitrsh {
     git reset --hard $args
 }
 
 # git cherry-pick
-function git_cp {
+function gitcp {
     git cherry-pick $args
 }
 
-function git_cp_a {
+function gitcpa {
     git cherry-pick --abort $args
 }
 
-function git_cp_c {
+function gitcpc {
     git cherry-pick --continue $args
 }
 
 # git diff
-function git_df {
+function gitdf {
     git diff $args
 }
 
 # git log
-function git_lg {
+function gitlg {
     git log $args
 }
 
@@ -121,8 +121,3 @@ function Get-GitCurrentBranch {
         return
     }
 }
-
-# $functionsToExport = @(
-    # 'git_lg'
-# )
-# Export-ModuleMember -Function $functionsToExport

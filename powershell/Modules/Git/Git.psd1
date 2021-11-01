@@ -69,7 +69,31 @@ Description = 'A PowerShell module for Git'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = "*"
+FunctionsToExport = @(
+    'gitad',
+    'gitco',
+    ‘gitcoam',
+    'gitst',
+    'gitbr',
+    'gitsw',
+    'gitps',
+    'gitpl',
+    'gitfe',
+    'gitrbi',
+    'gitrba',
+    'gitrbc',
+    'gitmg',
+    'gitrs',
+    'gitrss',
+    'gitrsh',
+    'gitcp',
+    'gitcpa',
+    'gitcpc',
+    'gitdf',
+    'gitlg',
+    'Get-GitIsClean',
+    'Get-GitCurrentBranch'
+)
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
