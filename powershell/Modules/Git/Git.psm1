@@ -1,5 +1,3 @@
-# git
-
 # git add
 function git-ad {
     git add $args
@@ -103,7 +101,7 @@ function git-lg {
     git log $args
 }
 
-function Get-Git-IsClean {
+function Get-GitIsClean {
     $gitOutput = (git status --porcelain) | Out-String
     if ($gitOutput) {
         return $false
@@ -113,7 +111,7 @@ function Get-Git-IsClean {
     }
 }
 
-function Get-Git-CurrentBranch {
+function Get-GitCurrentBranch {
     git symbolic-ref --quiet HEAD *> $null
 
     if ($LASTEXITCODE -eq 0) {

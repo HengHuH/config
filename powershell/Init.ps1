@@ -6,6 +6,9 @@
 
 Import-Module PSReadLine
 
+$modulesPath = Join-Path -Path $PSScriptRoot -ChildPath "Modules"
+$env:PSModulePath += ";$modulesPath"
+
 # keymaps
 . "$PSScriptRoot\keymaps.ps1"
 
@@ -13,7 +16,7 @@ Import-Module PSReadLine
 . "$PSScriptRoot\z.ps1"
 
 # git
-. "$PSScriptRoot\git.ps1"
+Import-Module -Name Git
 
 ################
 # Functions
