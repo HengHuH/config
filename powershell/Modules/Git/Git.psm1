@@ -4,11 +4,11 @@ function gitad {
 }
 
 # git commit
-function gitco {
+function gitcm {
     git commit $args
 }
 
-function gitcoam {
+function gitcmam {
     git add .
     git commit -am $args
 }
@@ -28,6 +28,10 @@ function gitsw {
     git switch $args
 }
 
+function gitswn {
+    git switch -c $args
+}
+
 # git push
 function gitps {
     git push $args
@@ -39,15 +43,15 @@ function gitpl {
 }
 
 # git fetch
-function gitfe {
+function gitft {
     git fetch $args
 }
 
-function gitfeo {
+function gitfto {
     git fetch origin $args
 }
 
-function gitfeu {
+function gitftu {
     git fetch upstream $args
 }
 
@@ -69,7 +73,16 @@ function gitmg {
     git merge $args
 }
 
-function gitrp {
+function gitmga {
+    git merge --abort $args
+}
+
+function gitmgc {
+    git merge --continue $args
+}
+
+# git remote
+function gitrmp {
     git remote prune $args
 }
 
