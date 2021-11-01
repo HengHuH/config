@@ -78,6 +78,7 @@ FunctionsToExport = @(
     'gitsw',
     'gitswn',
     'gitps',
+    'gitpsob',
     'gitpl',
     'gitft',
     'gitfto',

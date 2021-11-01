@@ -37,6 +37,11 @@ function gitps {
     git push $args
 }
 
+function gitpsob {
+    $currentBranch = Get-GitCurrentBranch
+    git push origin $currentBranch
+}
+
 # git pull
 function gitpl {
     git pull $args
