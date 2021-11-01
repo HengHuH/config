@@ -75,6 +75,7 @@ FunctionsToExport = @(
     ‘gitcmam',
     'gitst',
     'gitbr',
+    'gitbra',
     'gitsw',
     'gitswn',
     'gitps',

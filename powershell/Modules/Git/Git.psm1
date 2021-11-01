@@ -23,6 +23,10 @@ function gitbr {
     git branch $args
 }
 
+function gitbra {
+    git branch -a
+}
+
 # git switch
 function gitsw {
     git switch $args
