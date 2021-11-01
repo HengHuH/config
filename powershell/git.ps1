@@ -93,6 +93,16 @@ function git-cp-c {
     git cherry-pick --continue $args
 }
 
+# git diff
+function git-df {
+    git diff $args
+}
+
+# git log
+function git-lg {
+    git log $args
+}
+
 function Get-Git-IsClean {
     $gitOutput = (git status --porcelain) | Out-String
     if ($gitOutput) {
