@@ -23,6 +23,10 @@ function gitbr {
     git branch $args
 }
 
+function gitbrr {
+    git branch -r
+}
+
 function gitbra {
     git branch -a
 }
