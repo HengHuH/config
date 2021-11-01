@@ -48,7 +48,7 @@ function gitfeo {
 }
 
 function gitfeu {
-    git fetch upsource $args
+    git fetch upstream $args
 }
 
 # git rebase
