@@ -1,146 +1,155 @@
 # git add
-function gitad {
+function GitAD {
     git add $args
 }
 
 # git commit
-function gitcm {
+function GitCM {
     git commit $args
 }
 
-function gitcmam {
+function GitCMam {
     git add .
     git commit -am $args
 }
 
 # git status
-function gitst {
+function GitST {
     git status $args
 }
 
 # git branch
-function gitbr {
+function GitBR {
     git branch $args
 }
 
-function gitbrr {
+function GitBRr {
     git branch -r
 }
 
-function gitbra {
+function GitBRa {
     git branch -a
 }
 
 # git switch
-function gitsw {
+function GitSW {
     git switch $args
 }
 
-function gitswn {
+function GitSWn {
     git switch -c $args
 }
 
 # git push
-function gitps {
+function GitPS {
     git push $args
 }
 
-function gitpsob {
+function GitPSob {
     $currentBranch = Get-GitCurrentBranch
     git push origin $currentBranch
 }
 
 # git pull
-function gitpl {
+function GitPL {
     git pull $args
 }
 
 # git fetch
-function gitft {
+function GitFT {
     git fetch $args
 }
 
-function gitfto {
+function GitFTo {
     git fetch origin $args
 }
 
-function gitftu {
+function GitFTu {
     git fetch upstream $args
 }
 
 # git rebase
-function gitrbi {
+function GitRBi {
     git rebase -i $args
 }
 
-function gitrbm {
+function GitRBm {
     git rebase -i master
 }
 
-function gitrba {
+function GitRBa {
     git rebase --abort $args
 }
 
-function gitrbc {
+function GitRBc {
     git rebase --continue $args
 }
 
 # git merge
-function gitmg {
+function GitMG {
     git merge $args
 }
 
-function gitmgum {
+function GitMGum {
     git merge upstream/master $args
 }
 
-function gitmga {
+function GitMGa {
     git merge --abort $args
 }
 
-function gitmgc {
+function GitMGc {
     git merge --continue $args
 }
 
 # git remote
-function gitrmp {
+function GitRMp {
     git remote prune $args
 }
 
 # git rebase
-function gitrs {
+function GitRS {
     git reset $args
 }
 
-function gitrss {
+function GitRSs {
     git reset --soft $args
 }
 
-function gitrsh {
+function GitRSh {
     git reset --hard $args
 }
 
 # git cherry-pick
-function gitcp {
+function GitCP {
     git cherry-pick $args
 }
 
-function gitcpa {
+function GitCPa {
     git cherry-pick --abort $args
 }
 
-function gitcpc {
+function GitCPc {
     git cherry-pick --continue $args
 }
 
 # git diff
-function gitdf {
+function GitDF {
     git diff $args
 }
 
 # git log
-function gitlg {
+function GitLG {
     git log $args
+}
+
+# git stash
+function GitSS {
+    git stash $args
+}
+
+function GitSSp {
+    git stash pop
 }
 
 function Get-GitIsClean {
@@ -151,15 +160,6 @@ function Get-GitIsClean {
     else {
         return $true
     }
-}
-
-# git stash
-function gitss {
-    git stash $args
-}
-
-function gitssp {
-    git stash pop
 }
 
 function Get-GitCurrentBranch {
