@@ -56,7 +56,13 @@ function prompt {
     {
         $arr = @()
         $arr += $parts[0]
-        for($i=1; $i -lt $length - 1; $i++) { $arr += ($parts[$i]).SubString(0,1)}
+        for($i=1; $i -lt $length - 1; $i++) {
+            if ($parts[$i][0] -eq '.') {
+                $arr += ($parts[$i]).SubString(0,2)
+            } else {
+                $arr += ($parts[$i]).SubString(0,1)
+            }
+        }
         $arr += $parts[$length - 1]
         $path = $arr -join "\"
     }
