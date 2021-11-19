@@ -8,13 +8,15 @@ git, RSA, lua, python
 
 ## Initialization
 
+```
 cd $HOME  
 mkdir .local && cd .local  
-git clone git@github.com:HengHuH/config.git config  
-
+git clone git@github.com:HengHuH/config.git config
+```
 ### PowerShell
 
-在 $HOME/Documents/PowerShell/Microsoft.PowerShell_profile.ps1 中添加 .\$HOME/.local/config/powershell/Init.ps1
+vim $PROFILE
+APPEND: .\$HOME/.local/config/powershell/Init.ps1
 
 ### MacOS or Linux
 
