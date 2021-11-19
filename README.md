@@ -1,21 +1,24 @@
-# Config
-
-HengHuH's Persional shell configs，using Powershell on Windows，zsh on Linux or Mac.
+Heng's persional profiles, powershell, zsh
 
 ## Dependency
 
-git, RSA, lua, python
+git, lua, python
 
 ## Initialization
 
 ```
-cd $HOME  
-mkdir .local && cd .local  
+cd $HOME
+
+mkdir .local && cd .local
+
 git clone git@github.com:HengHuH/config.git config
 ```
-### PowerShell
+### Windows
+
+Open PowerShell
 
 vim $PROFILE
+
 APPEND: .\$HOME/.local/config/powershell/Init.ps1
 
 ### MacOS or Linux
